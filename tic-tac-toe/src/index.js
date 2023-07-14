@@ -1,12 +1,12 @@
-import React from 'React';
-import ReactDOM from 'React-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
     render() {
-        return (
-            <button className= "square">
-            {/* TODO */}
+        return ( 
+            <button className= "square" onClick={function(){alert('Olha só, você clicou!');}}>
+            {this.props.value}
             </button>
         );
     }
@@ -14,7 +14,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
     renderSquare (i) {
-        return <Square />;
+        return <Square value={i} />;
     }
     render() {
         const status = 'Next player: X';
